@@ -32,8 +32,8 @@ class Multibubble {
             //  Percentage point across x-axis where bubble will appear
             let moveX = Math.floor(Math.random() * 100);
 
-            //  Speed the bubble moves to the top, between 1 - 5 seconds
-            let speed = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+            //  Speed the bubble moves to the top, between 1.5 - 6 seconds
+            let speed = Math.floor(Math.random() * (6 - 1.5 + 1)) + 1;
 
             // Random choice of 4 colors
             // Colors: peachpuff, lemonchiffon, lightblue, lavender
@@ -74,7 +74,9 @@ class Multibubble {
             div.style.height = `${this.bubbles[i].size}px`;
 
         } 
-    }         
+    }   
+    check(){
+        console.log(this.bubbles);  }    
 }
 
 
@@ -90,7 +92,7 @@ class Extrabubble extends Multibubble {
 }
 
 const myBubbles = new Multibubble;
-
+myBubbles.check();
 
 /*=============================================================
 ----------HTML LINKS & EVENT LISTENERS
@@ -119,13 +121,38 @@ resetButton.addEventListener('click', () => {
 
 //  Faster button
 
-// const faster = document.getElementById('faster');
+const faster = document.getElementById('faster');
 
-// faster.addEventListener('click', () => {
-//     const bubs = document.querySelectorAll('bubbles');
-//     for (let i = 0; i < bubs.length; i++) {
-//         let currentSpeed = bubs.style.animationDuration[i];
-//         let speedUp = currentSpeed[i] * 2;
-//         bubs.style.animationDuration = `${speedUp}s`;
-//     }
-// })
+faster.addEventListener('click', () => {
+    let allBubbles = document.getElementsByClassName('bubble');
+    for (let i = 0; i < allBubbles.length; i++) {
+        let speed = allBubbles[i].style.animationDuration;
+        let oldSpeed = parseFloat(speed);
+        let newSpeed = oldSpeed - 0.5;
+        allBubbles[i].style.removeProperty("animation-duration");
+        if (newSpeed > 0) {
+            allBubbles[i].style.animationDuration = `${newSpeed}s`; 
+        } else {
+            allBubbles[i].style.animationDuration = `0.5s`
+        }
+    }
+})
+
+//  SLOWER BUTTON
+
+const slower = document.getElementById('slower');
+
+slower.addEventListener('click', () => {
+    let allBubbles = document.getElementsByClassName('bubble');
+    for (let i = 0; i < allBubbles.length; i++) {
+        let speed = allBubbles[i].style.animationDuration;
+        let oldSpeed = parseFloat(speed);
+        let newSpeed = oldSpeed + 0.5;
+        allBubbles[i].style.removeProperty("animation-duration");
+        if (newSpeed < 20) {
+            allBubbles[i].style.animationDuration = `${newSpeed}s`; 
+        } else {
+            allBubbles[i].style.animationDuration = `20s`
+        }
+    }
+})
