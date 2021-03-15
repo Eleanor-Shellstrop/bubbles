@@ -5,9 +5,8 @@
 //  Attributes for every bubble
 
 class Bubble {
-    constructor (x, wait, rate, color, scale, size) {
+    constructor (x, rate, color, scale, size) {
         this.x = x;
-        this.wait = wait;
         this.rate = rate;
         this.color = color;
         this.scale = scale;
@@ -33,11 +32,8 @@ class Multibubble {
             //  Percentage point across x-axis where bubble will appear
             let moveX = Math.floor(Math.random() * 100);
 
-            //  Animation delay to stagger entrance, 0 - 10 seconds
-            let delay = Math.floor(Math.random() * 10);
-
-            //  Speed the bubble moves to the top, between 5 - 11 seconds
-            let speed = Math.floor(Math.random() * (11 - 5 + 1)) + 5;
+            //  Speed the bubble moves to the top, between 1 - 5 seconds
+            let speed = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
 
             // Random choice of 4 colors
             // Colors: peachpuff, lemonchiffon, lightblue, lavender
@@ -54,14 +50,13 @@ class Multibubble {
 
             //  Give Bubble class values
             Bubble.x = moveX;
-            Bubble.wait = delay;
             Bubble.rate = speed;
             Bubble.color = randomColor;
             Bubble.scale = randomScale;
             Bubble.size = randomSize;
 
             //  Push to bubbles array
-            this.bubbles.push(new Bubble(moveX, delay, speed, randomColor, randomScale, randomSize)); 
+            this.bubbles.push(new Bubble(moveX, speed, randomColor, randomScale, randomSize)); 
         }
            
     }
@@ -72,7 +67,6 @@ class Multibubble {
             div.className = 'bubble'; 
             document.getElementById('main').appendChild(div);
             div.style.left = `${this.bubbles[i].x}%`;
-            div.style.animationDelay = `${this.bubbles[i].wait}s`;
             div.style.animationDuration = `${this.bubbles[i].rate}s`;
             div.style.background = `radial-gradient(at 25% 25%,  #ffffffa4 0%, ${this.bubbles[i].color} 30%, #ffffff62 80%, #add8e6ad 100%)`;
             div.style.transform = `translateY(-100%) scale(${this.bubbles[i].scale})`;
@@ -122,3 +116,16 @@ resetButton.addEventListener('click', () => {
        document.getElementById('main').removeChild(pop);
    }
 })
+
+//  Faster button
+
+// const faster = document.getElementById('faster');
+
+// faster.addEventListener('click', () => {
+//     const bubs = document.querySelectorAll('bubbles');
+//     for (let i = 0; i < bubs.length; i++) {
+//         let currentSpeed = bubs.style.animationDuration[i];
+//         let speedUp = currentSpeed[i] * 2;
+//         bubs.style.animationDuration = `${speedUp}s`;
+//     }
+// })
