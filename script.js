@@ -10,8 +10,9 @@
  */
 
 class Bubble {
-    constructor (x, rate, color, scale, size) {
+    constructor (x, delay, rate, color, scale, size) {
         this.x = x;
+        this.delay = delay;
         this.rate = rate;
         this.color = color;
         this.scale = scale;
@@ -40,6 +41,9 @@ class Multibubble {
             //  Percentage point across x-axis where bubble will appear
             let moveX = Math.floor(Math.random() * 100);
 
+            //  Stagger animation start between 0 - 5 seconds
+            let wait = Math.floor(Math.random() * 5);
+
             //  Speed the bubble moves to the top, between 1.5 - 6 seconds
             let speed = Math.floor(Math.random() * (6 - 1.5 + 1)) + 1;
 
@@ -58,13 +62,14 @@ class Multibubble {
 
             //  Give Bubble class values
             Bubble.x = moveX;
+            Bubble.delay = wait;
             Bubble.rate = speed;
             Bubble.color = randomColor;
             Bubble.scale = randomScale;
             Bubble.size = randomSize;
 
             //  Push to bubbles array
-            this.bubbles.push(new Bubble(moveX, speed, randomColor, randomScale, randomSize)); 
+            this.bubbles.push(new Bubble(moveX, wait, speed, randomColor, randomScale, randomSize)); 
         }
            
     }
@@ -76,6 +81,7 @@ class Multibubble {
             document.getElementById('main').appendChild(div);
             div.style.left = `${this.bubbles[i].x}%`;
             div.style.animationDuration = `${this.bubbles[i].rate}s`;
+            div.style.animationDelay = `${this.bubbles[i].delay}s`;
             div.style.background = `radial-gradient(at 25% 25%,  #ffffffa4 0%, ${this.bubbles[i].color} 30%, #ffffff62 80%, #add8e6ad 100%)`;
             div.style.transform = `translateY(-100%) scale(${this.bubbles[i].scale})`;
             div.style.width = `${this.bubbles[i].size}px`;
