@@ -152,9 +152,9 @@ const faster = document.getElementById('faster');
      *      
      *  Remove the current duration property and replace with the new one.
      * 
-     * @param newSpeed      Takes the current duration and adds half a second.
+     * @param newSpeed      Takes the current duration and subtracts half a second.
      * 
-     *  Will increase every click. Maximum speed set to 0.5s
+     *  Will decrease every click. Maximum speed set to 0.5s
      * -------------------------------------------------------------------------
      */
 
