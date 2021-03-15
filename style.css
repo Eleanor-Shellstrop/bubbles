@@ -13,19 +13,6 @@
     overflow: hidden;
 }
 
-
-.bubble {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    align-self: self-end;
-    background: radial-gradient(at 25% 25%, #ffffffa4 0%, #00ffff91 30%, #ffffff62 80%, #add8e6ad 100%);    
-    animation: upward 6s ease-in infinite running;
-    transform: translateY(-100%);
-    overflow: hidden;
-}  
-
 .button_display {
     display: block;
     padding: 0% 25%;
@@ -49,6 +36,25 @@
     margin-bottom: 25px;
 }
 
+#fancy {
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: 2em;
+    text-shadow: 2px 2px 3px black, -2px -2px 2px darkslategrey;
+}
+
+.bubble {
+    width: 100px;
+    height: 100px;
+    border: 100px transparent;
+    border-radius: 50%;
+    position: absolute;
+    align-self: self-end;
+    background: radial-gradient(at 25% 25%, #ffffffa4 0%, #00ffff91 30%, #ffffff62 80%, #add8e6ad 100%);    
+    animation: upward 6s ease-in infinite running;
+    transform: translateY(-100%);
+    overflow: hidden;
+}  
+
 @keyframes upward {
     0% {
         bottom: -20%;
@@ -60,4 +66,9 @@
     100% {
         bottom: 110%;
     }
+}
+
+.bubble.hat {
+    background: center / contain url("./fancy.png") !important;
+    box-shadow: inset 0px 0px 10px white, 0px 0px 30px goldenrod;
 }

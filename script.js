@@ -193,11 +193,31 @@ slower.addEventListener('click', () => {
     }
 })
 
+/**
+ ** ------   FANCY BUTTON    ------
+ */
+const fancy = document.getElementById('fancy');
 
-
-
+fancy.addEventListener('click', () => {
+    document.querySelectorAll('.bubble').forEach(bubble => {
+        // resetFancy();
+        bubble.classList.toggle('hat');
+    })
+})
 
 /**
+ * TODO: toggle not working properly on bubbles added after "fancy" pushed
+ */
+
+// function resetFancy () {
+//     document.querySelectorAll('.bubble').forEach(bubble => {
+//     if (bubble.classList == 'hat') {
+//       bubble.classList.remove('hat');  
+//     }
+// })}
+
+
+/**     NOTE:
  * !    What's up with the EXTRABUBBLE class?
  * 
  *      Clicking the "MORE BUBBLES" button without this extended class
