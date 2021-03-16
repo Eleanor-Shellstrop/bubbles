@@ -117,6 +117,20 @@ const myBubbles = new Multibubble;
 *
 *=============================================================*/
 
+/**
+ * TODO: FIX TOGGLES AND RESETS.
+ * Need to remove previous classes once a new button is pushed (working currently)
+ * BUT also remove own element when pushed twice.
+ * Example: 
+ *      Pushing "BIGGER BUBBLES" once makes the bubbles bigger,
+ *      pushing the button again does not remove the class
+ *      because of the reset functions.
+ * 
+ *      Removing the reset functons keeps adding classes to existing ones. 
+ *      TODO: Try switch?
+ */
+
+
 //*--------  MORE BUBBLES button ------
 
 const bubbleButton = document.getElementById('more_bubbles');
@@ -200,11 +214,28 @@ slower.addEventListener('click', () => {
 })
 
 /**
+ ** ------   BIGGER BUTTON    ------
+ */
+
+ const bigger = document.getElementById('bigger');
+
+ bigger.addEventListener('click', () => {
+     resetBubble();
+     resetMain();
+     document.querySelectorAll('.bubble').forEach(bubble => {
+         bubble.classList.toggle('bigger');
+     });
+     document.getElementById('main').classList.toggle('bigger');
+ })
+
+/**
  ** ------   FANCY BUTTON    ------
  */
 const fancy = document.getElementById('fancy');
 
 fancy.addEventListener('click', () => {
+    resetBubble();
+    resetMain();
     document.querySelectorAll('.bubble').forEach(bubble => {
         // resetFancy();
         bubble.classList.toggle('hat');
@@ -218,6 +249,8 @@ fancy.addEventListener('click', () => {
 const goth = document.getElementById('goth');
    
 goth.addEventListener('click', () => {
+    resetBubble();
+    resetMain();
     document.querySelectorAll('.bubble').forEach(bubble => {
         bubble.classList.toggle('goth');
     });
@@ -231,22 +264,35 @@ goth.addEventListener('click', () => {
 const disco = document.getElementById('disco');
 
 disco.addEventListener('click', () => {
+    resetBubble();
+    resetMain();
     document.querySelectorAll('.bubble').forEach(bubble => {
         bubble.classList.toggle('disco');
     });
     document.getElementById('main').classList.toggle('disco');
 })
 
- /**
- * TODO: toggle not working properly on bubbles added after "fancy" pushed
+
+
+/**
+ * ------   Reset functions -------
  */
 
-// function resetFancy () {
-//     document.querySelectorAll('.bubble').forEach(bubble => {
-//     if (bubble.classList == 'hat') {
-//       bubble.classList.remove('hat');  
-//     }
-// })}
+function resetBubble () {
+    document.querySelectorAll('.bubble').forEach(bubble => {
+        bubble.classList.remove('hat'); 
+        bubble.classList.remove('goth'); 
+        bubble.classList.remove('disco');  
+        bubble.classList.remove('bigger');
+    }
+)}
+
+function resetMain () {
+    document.getElementById('main').classList.remove('bigger');
+    document.getElementById('main').classList.remove('hat');
+    document.getElementById('main').classList.remove('disco');
+    document.getElementById('main').classList.remove('goth');
+}
 
 
 /**     NOTE:
