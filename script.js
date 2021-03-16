@@ -212,6 +212,32 @@ fancy.addEventListener('click', () => {
 })
 
 /**
+ ** ------   GOTH BUTTON    ------
+ */
+
+const goth = document.getElementById('goth');
+   
+goth.addEventListener('click', () => {
+    document.querySelectorAll('.bubble').forEach(bubble => {
+        bubble.classList.toggle('goth');
+    });
+    document.getElementById('main').classList.toggle('goth');
+})
+
+/**
+ ** ------   DISCO BUTTON    ------
+ */
+
+const disco = document.getElementById('disco');
+
+disco.addEventListener('click', () => {
+    document.querySelectorAll('.bubble').forEach(bubble => {
+        bubble.classList.toggle('disco');
+    });
+    document.getElementById('main').classList.toggle('disco');
+})
+
+ /**
  * TODO: toggle not working properly on bubbles added after "fancy" pushed
  */
 
