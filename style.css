@@ -1,11 +1,11 @@
-/* PAGE STYLES */
+/** PAGE STYLES */
 
 * {
     font-family: 'Shrikhand', cursive;
 }
 
 .main {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     background: linear-gradient(lightcyan 0%, lightblue 50%, teal 100%);
@@ -16,7 +16,7 @@
 }
 
 /*  -----------------------------
-            BUTTON STYLES
+  *          BUTTON STYLES
     -----------------------------   */  
 
 .button_display, 
@@ -25,6 +25,14 @@
     display: flex;
     flex-direction: column;
     align-self: flex-start;
+}
+
+.button_display {
+    grid-area: topbuttons;
+}
+
+.style_buttons {
+    grid-area: bottombuttons;
 }
 
 
@@ -64,7 +72,7 @@
 
 
 /*  -----------------------------
-            BUBBLE STYLES
+    *        BUBBLE STYLES
     -----------------------------   */  
 
 .bubble {
@@ -93,7 +101,19 @@
     }
 }
 
-/* LISTENERS */
+footer {
+    background-color: orchid;
+    padding: 10px;
+}
+
+ul, li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: white;
+    list-style-type: none;
+}
+
+/** LISTENERS */
 
 .bubble.bigger {transform: translateY(-100%) scale(2) !important;}
 
@@ -119,14 +139,43 @@
 .main.disco { background: center url("./images/floor.jpg");}
 
 /*  -----------------------------
-            LARGER SCREENS
+    *        LARGER SCREENS
     -----------------------------   */  
 
-@media (min-width: 1200px) {
+@media (min-width: 750px) {
+    .main {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        grid-template-rows: 15% 15% auto;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+            "topbuttons"
+            "bottombuttons"
+            "."
+            ".";
+    }
+    .button_display,
+    .style_buttons {
+        width: 85% auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-start;
+    }
+    .button {
+        margin: 0px 30px;
+    }
+}
+
+@media (min-width: 1290px) {
     .body {
         display: grid;
         margin: 0 auto;
         width: 100vw;
+    }
+    .main {
+        display: flex;
     }
     .button_display, 
     .style_buttons {
