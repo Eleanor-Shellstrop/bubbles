@@ -1,3 +1,5 @@
+/* PAGE STYLES */
+
 * {
     font-family: 'Shrikhand', cursive;
 }
@@ -12,6 +14,10 @@
     align-items: center;
     overflow: hidden;
 }
+
+/*  -----------------------------
+            BUTTON STYLES
+    -----------------------------   */  
 
 .button_display, 
 .style_buttons {
@@ -56,6 +62,11 @@
     font-size: 1em;
 }
 
+
+/*  -----------------------------
+            BUBBLE STYLES
+    -----------------------------   */  
+
 .bubble {
     width: 100px;
     height: 100px;
@@ -82,8 +93,9 @@
     }
 }
 
-.bubble.bigger {transform: translateY(-100%) scale(2) !important;}
+/* LISTENERS */
 
+.bubble.bigger {transform: translateY(-100%) scale(2) !important;}
 
 .bubble.hat {
     background: center / contain url("./images/fancy.png") !important;
@@ -105,6 +117,10 @@
     background: center / cover url("./images/disco.png") !important;
 }
 .main.disco { background: center url("./images/floor.jpg");}
+
+/*  -----------------------------
+            LARGER SCREENS
+    -----------------------------   */  
 
 @media (min-width: 1200px) {
     .body {
