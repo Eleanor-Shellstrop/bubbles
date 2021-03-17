@@ -30,8 +30,6 @@ class Bubble {
 
 /** -----------------------------------------------------------------------------
  * *---------------------------  MULTIBUBBLE ------------------------------------
- * 
- * Bubble making factory to make 5 bubbles at a time
  *   -----------------------------------------------------------------------------*/
 
 class Multibubble {
@@ -131,17 +129,12 @@ const myBubbles = new Multibubble;
 *
 *=============================================================*/
 
-
-/*  ---------------------------------------
- * *--------  GLOBAL VARIABLE ------
-    --------------------------------------- */
-
+// **--------  GLOBAL VARIABLE ------
 const main = document.getElementById('main');
 
 
-/*  ---------------------------------------
- * *--------  MORE BUBBLES button ------
-    --------------------------------------- */
+
+// **--------  MORE BUBBLES button ------
 
 const bubbleButton = document.getElementById('more_bubbles');
 
@@ -149,27 +142,11 @@ bubbleButton.addEventListener('click', () => {
     const extra = new Extrabubble;
 })
 
+//------------------------------------------------------------------------------------------------
+// **------  FASTER button ------
 
-/** ------------------------------
- * *------  FASTER button ------
-    ------------------------------  */
-
-    /** Event Listener: Iteration Notes
-     * ------------------------------------------------------------------------
-     * @param speed         Iterate through style property to find "animation-duration" time (string). 
-     *                      
-     * @param oldSpeed      Parse the string to find integer. Assigned here.                      
-     *      
-     *  Remove the current duration property and replace with the new one.
-     * 
-     * @param newSpeed      Takes the current duration and subtracts half a second.
-     * 
-     *  Will decrease every click. Maximum speed set to 0.5s
-     *  Couldn't toggle class like the "goth" et al because the animation duration is different
-     *  for every bubble and needs to increase by 0.5s every single click.
-     * -------------------------------------------------------------------------
-     */
-
+//  Can't toggle class like most buttons because it needs to 
+//  increase every single click
 
 const faster = document.getElementById('faster');
 
@@ -188,15 +165,12 @@ faster.addEventListener('click', () => {
         }
     }
 })
+//------------------------------------------------------------------------------------------------
 
+//*   SLOWER BUTTON 
+//    Works exact same as "FASTER" button except that it adds time to the duration
+//  instead of subtracting it. Max "slowness": 20 seconds.
 
-/*/--------------------------------------------
-//*------  SLOWER BUTTON ------
-    Works exact same as "FASTER" button
-    except that it adds time to the duration
-    instead of subtracting it.
-    Max "slowness": 20 seconds.
- --------------------------------------------   */
 
 const slower = document.getElementById('slower');
 
@@ -214,10 +188,9 @@ slower.addEventListener('click', () => {
         }
     }
 })
+//------------------------------------------------------------------------------------------------
 
-/** --------------------------------
- ** ------   BIGGER BUTTON    ------
-    --------------------------------    */
+//** ------   BIGGER BUTTON    ------
 
  const bigger = document.getElementById('bigger');
 
@@ -230,10 +203,9 @@ slower.addEventListener('click', () => {
     });
     main.classList.toggle('bigger');
  })
+//------------------------------------------------------------------------------------------------
 
-/** -------------------------------
- ** ------   GOTH BUTTON    ------
-    ------------------------------- */
+//** ------   GOTH BUTTON    ------
 
 const goth = document.getElementById('goth');
    
@@ -246,10 +218,9 @@ goth.addEventListener('click', () => {
     });
     main.classList.toggle('goth');
 })
+//------------------------------------------------------------------------------------------------
 
-/** --------------------------------
- ** ------   DISCO BUTTON    ------
-    --------------------------------    */
+//** ------   DISCO BUTTON    ------
 
 const disco = document.getElementById('disco');
 
@@ -262,10 +233,10 @@ disco.addEventListener('click', () => {
     });
     main.classList.toggle('disco');
 })
+//------------------------------------------------------------------------------------------------
 
-/** --------------------------------
- ** ------   FANCY BUTTON    ------
---------------------------------    */
+//** ------   FANCY BUTTON    ------
+
 const fancy = document.getElementById('fancy');
 
 fancy.addEventListener('click', () => {
@@ -278,10 +249,9 @@ fancy.addEventListener('click', () => {
     })
     main.classList.toggle('hat');
 })
+//------------------------------------------------------------------------------------------------
 
-/** --------------------------------------------
- * *------  RESET button to clear screen  ------
-    --------------------------------------------     */
+//* *------  RESET button to clear screen  ------
 
 const resetButton = document.getElementById('reset');
 
@@ -293,7 +263,9 @@ resetButton.addEventListener('click', () => {
        main.removeChild(pop);
    }
 })
+//------------------------------------------------------------------------------------------------
 
+//TODO: Try to condense these
 
 function removeGoth () {
     document.querySelectorAll('.bubble').forEach(bubble => {
