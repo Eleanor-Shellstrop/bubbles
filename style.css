@@ -138,7 +138,7 @@ ul, li {
 .bubble.disco {
     background: center / cover url("./images/disco.png") !important;
 }
-.main.disco { background: center url("./images/floor.jpg");}
+.main.disco { background: center / cover url("./images/floor.jpg");}
 
 /*  -----------------------------
     *        LARGER SCREENS

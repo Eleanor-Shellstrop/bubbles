@@ -213,9 +213,9 @@ slower.addEventListener('click', () => {
  const bigger = document.getElementById('bigger');
 
  bigger.addEventListener('click', () => {
-    removeClass('goth');
-    removeClass('hat');
-    removeClass('disco');
+    // removeClass('goth');
+    // removeClass('hat');
+    // removeClass('disco');
     toggleBubbles('bigger');
     main.classList.toggle('bigger');
  })
@@ -226,7 +226,7 @@ slower.addEventListener('click', () => {
 const goth = document.getElementById('goth');
    
 goth.addEventListener('click', () => {
-    removeClass('bigger');
+    // removeClass('bigger');
     removeClass('hat');
     removeClass('disco');
     toggleBubbles('goth');
@@ -241,7 +241,7 @@ const disco = document.getElementById('disco');
 disco.addEventListener('click', () => {
     removeClass('goth');
     removeClass('hat');
-    removeClass('bigger');
+    // removeClass('bigger');
     toggleBubbles('disco');
     main.classList.toggle('disco');
 })
@@ -253,7 +253,7 @@ const fancy = document.getElementById('fancy');
 
 fancy.addEventListener('click', () => {
     removeClass('goth');
-    removeClass('bigger');
+    // removeClass('bigger');
     removeClass('disco');
     toggleBubbles('hat');
     main.classList.toggle('hat');
