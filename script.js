@@ -121,7 +121,7 @@ class Extrabubble extends Multibubble {
 
 //*------   FIRST BUBBLES ON PAGE LOAD ------
 const myBubbles = new Multibubble;
-
+//--------------------------------------------------------------------------------------------------
 
 /**============================================================
 * 
@@ -129,10 +129,28 @@ const myBubbles = new Multibubble;
 *
 *=============================================================*/
 
-// **--------  GLOBAL VARIABLE ------
+//--------------------------------------------------------------------------------------------------
+
+// **--------  GLOBAL VARIABLES & FUNCTIONS ----------
+
 const main = document.getElementById('main');
 
+//  Toggle on/off element's class
 
+function toggleBubbles(elem) {
+    document.querySelectorAll('.bubble').forEach(bubble => {
+    bubble.classList.toggle(elem);
+    });
+}
+
+//Remove classes not on element
+
+function removeClass(elem) {
+    main.classList.remove(elem);
+    document.querySelectorAll('.bubble').forEach(bubble => {
+        bubble.classList.remove(elem)});
+    }
+//------------------------------------------------------------------------------------------------
 
 // **--------  MORE BUBBLES button ------
 
@@ -195,12 +213,10 @@ slower.addEventListener('click', () => {
  const bigger = document.getElementById('bigger');
 
  bigger.addEventListener('click', () => {
-    removeDisco();
-    removeGoth();
-    removeHat();
-    document.querySelectorAll('.bubble').forEach(bubble => {
-        bubble.classList.toggle('bigger');
-    });
+    removeClass('goth');
+    removeClass('hat');
+    removeClass('disco');
+    toggleBubbles('bigger');
     main.classList.toggle('bigger');
  })
 //------------------------------------------------------------------------------------------------
@@ -210,12 +226,10 @@ slower.addEventListener('click', () => {
 const goth = document.getElementById('goth');
    
 goth.addEventListener('click', () => {
-    removeDisco();
-    removeHat();
-    removeBigger();
-    document.querySelectorAll('.bubble').forEach(bubble => {
-        bubble.classList.toggle('goth');
-    });
+    removeClass('bigger');
+    removeClass('hat');
+    removeClass('disco');
+    toggleBubbles('goth');
     main.classList.toggle('goth');
 })
 //------------------------------------------------------------------------------------------------
@@ -225,12 +239,10 @@ goth.addEventListener('click', () => {
 const disco = document.getElementById('disco');
 
 disco.addEventListener('click', () => {
-    removeGoth();
-    removeHat();
-    removeBigger();
-    document.querySelectorAll('.bubble').forEach(bubble => {
-        bubble.classList.toggle('disco');
-    });
+    removeClass('goth');
+    removeClass('hat');
+    removeClass('bigger');
+    toggleBubbles('disco');
     main.classList.toggle('disco');
 })
 //------------------------------------------------------------------------------------------------
@@ -240,13 +252,10 @@ disco.addEventListener('click', () => {
 const fancy = document.getElementById('fancy');
 
 fancy.addEventListener('click', () => {
-    removeDisco();
-    removeGoth();
-    removeBigger();
-    document.querySelectorAll('.bubble').forEach(bubble => {
-        // resetFancy();
-        bubble.classList.toggle('hat');
-    })
+    removeClass('goth');
+    removeClass('bigger');
+    removeClass('disco');
+    toggleBubbles('hat');
     main.classList.toggle('hat');
 })
 //------------------------------------------------------------------------------------------------
@@ -261,40 +270,13 @@ resetButton.addEventListener('click', () => {
    for (let i = bubbleField.length - 1; i >= 0; i--) {
        let pop = bubbleField[i];
        main.removeChild(pop);
+       main.className = 'main';
    }
 })
 //------------------------------------------------------------------------------------------------
 
-//TODO: Try to condense these
 
-function removeGoth () {
-    document.querySelectorAll('.bubble').forEach(bubble => {
-    bubble.classList.remove('goth'); 
-    main.classList.remove('goth');
-    }
-)}
-
-function removeDisco () {
-    document.querySelectorAll('.bubble').forEach(bubble => {
-    bubble.classList.remove('disco'); 
-    main.classList.remove('disco');
-    }
-)}
-
-function removeHat () {
-    document.querySelectorAll('.bubble').forEach(bubble => {
-    bubble.classList.remove('hat'); 
-    main.classList.remove('hat');
-    }
-)}
-
-function removeBigger () {
-    document.querySelectorAll('.bubble').forEach(bubble => {
-    bubble.classList.remove('bigger'); 
-    main.classList.remove('bigger');
-    }
-)}
-
+    
 //===================================================================================================
 /**     NOTE:
  * !    What's up with the EXTRABUBBLE class?
