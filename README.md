@@ -23,6 +23,8 @@ what started as a basic page with only "more bubbles" and "reset bubbles" button
 ### Mobile first design
 The media queries feature breaks at minimum screen widths of 750px and 1290px for a better viewing experience on tablets or pcs. The buttons will change from columns on the original size to two rows of four at 750px and one row of eight at 1290px.
 
+While most phones today are over 360px wide, I have included a query for under 359px. Buttons will be displayed in a single column with smaller button size. Fonts, margins and padding all ajusted. 
+
 
 ### Features
 

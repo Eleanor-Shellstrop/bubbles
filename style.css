@@ -21,7 +21,7 @@
 
 .button_display, 
 .style_buttons {
-    padding: 2% 5%;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
@@ -38,7 +38,7 @@
 
 .button {
     width: 150px;
-    height: 75px;
+    height: 85px;
     background: orchid;
     border: 1px transparent;
     border-radius: 15px;
@@ -48,8 +48,9 @@
                     inset -5px -5px 5px lightpink;
     color: lavenderblush;
     text-shadow: 1px 2px 3px darkorchid, -2px -2px 1px darkorchid;
+    font-size: 1.2em;
     margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     padding: 5px 10px;
 }
 
@@ -68,6 +69,7 @@
     height: 60px;
     margin-top: 25px;
     font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -196,5 +198,28 @@ ul, li {
     }
     .footer_buttons {
         align-self: flex-end;
+    }
+}
+
+/* Very small screens */
+
+@media (max-width: 359px) {
+    .main {
+        display: block
+    }
+    .button,
+    #fancy,
+    #reset {
+        width: 100px;
+        height: 40px;
+        font-size: x-small;
+        margin-bottom: 5px;
+        text-shadow: 1px 2px 3px darkorchid, -2px -2px 1px darkorchid;
+        font-family: 'Shrikhand', cursive;
+    }
+    .button_display, 
+    .style_buttons {
+        margin: 0px 0px 0px 10px;
+        padding: 0px;
     }
 }
