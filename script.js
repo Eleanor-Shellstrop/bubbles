@@ -73,13 +73,25 @@ class Multibubble {
             let div = document.createElement('div');
             div.classList = 'bubble'; 
             document.getElementById('main').appendChild(div);
-            div.style.left = `${this.bubbles[i].x}%`;
-            div.style.animationDuration = `${this.bubbles[i].rate}s`;
-            div.style.animationDelay = `${this.bubbles[i].delay}s`;
-            div.style.background = `radial-gradient(at 25% 25%,  #ffffffa4 0%, ${this.bubbles[i].color} 30%, #ffffff62 80%, #add8e6ad 100%)`;
-            div.style.transform = `translateY(-100%) scale(${this.bubbles[i].scale})`;
-            div.style.width = `${this.bubbles[i].size}px`;
-            div.style.height = `${this.bubbles[i].size}px`;
+
+            let enter = this.bubbles[i].x;
+            div.style.left = enter + "%";
+
+            let quick = this.bubbles[i].rate;
+            div.style.animationDuration = quick + "s";
+
+            let stagger = this.bubbles[i].delay;
+            div.style.animationDelay = stagger + "s";
+
+            let hue = this.bubbles[i].color;
+            div.style.background = "radial-gradient(at 25% 25%,  #ffffffa4 0%, " + hue + " 30%, #ffffff62 80%, #add8e6ad 100%)";
+
+            let scaleUpDown = this.bubbles[i].scale;
+            div.style.transform = "translateY(-100%) scale("+ scaleUpDown + ")";
+
+            let widthHeight = this.bubbles[i].size;
+            div.style.width = widthHeight + "px";
+            div.style.height = widthHeight + "px";
 
             //Match new bubbles to existing class on other bubbles
             const mainClass = document.getElementById('main').classList;
@@ -93,8 +105,8 @@ class Multibubble {
             if (mainClass == 'main disco') {
                 div.classList.toggle('disco');
             };
-            if (mainClass == 'main hat') {
-                div.classList.toggle('hat');
+            if (mainClass == 'main fancy') {
+                div.classList.toggle('fancy');
             };
         } 
     }      
@@ -120,7 +132,9 @@ class Extrabubble extends Multibubble {
 }
 
 //*------   FIRST BUBBLES ON PAGE LOAD ------
+
 const myBubbles = new Multibubble;
+
 //--------------------------------------------------------------------------------------------------
 
 /**============================================================
@@ -130,6 +144,7 @@ const myBubbles = new Multibubble;
 *=============================================================*/
 
 //--------------------------------------------------------------------------------------------------
+
 
 // **--------  GLOBAL VARIABLES & FUNCTIONS ----------
 
@@ -143,7 +158,7 @@ function toggleBubbles(elem) {
     });
 }
 
-//Remove classes not on element
+//  Remove classes not on element
 
 function removeClass(elem) {
     main.classList.remove(elem);
@@ -161,6 +176,7 @@ bubbleButton.addEventListener('click', () => {
 })
 
 //------------------------------------------------------------------------------------------------
+
 // **------  FASTER button ------
 
 //  Can't toggle class like most buttons because it needs to 
@@ -171,15 +187,19 @@ const faster = document.getElementById('faster');
 faster.addEventListener('click', () => {
     //  Declare all appended children with class "bubble"
     let allBubbles = document.getElementsByClassName('bubble');
+
     for (let i = 0; i < allBubbles.length; i++) {
         let speed = allBubbles[i].style.animationDuration;
+
         let oldSpeed = parseFloat(speed);
         let newSpeed = oldSpeed - 0.5;
+
         allBubbles[i].style.removeProperty("animation-duration");
-        if (newSpeed > 0) {
-            allBubbles[i].style.animationDuration = `${newSpeed}s`; 
+        if (newSpeed > 0.6) {
+            allBubbles[i].style.animationDuration = newSpeed + "s"; 
         } else {
-            allBubbles[i].style.animationDuration = `0.5s`
+            //  cap speed at half a second
+            allBubbles[i].style.animationDuration = "0.5s"
         }
     }
 })
@@ -213,9 +233,6 @@ slower.addEventListener('click', () => {
  const bigger = document.getElementById('bigger');
 
  bigger.addEventListener('click', () => {
-    // removeClass('goth');
-    // removeClass('hat');
-    // removeClass('disco');
     toggleBubbles('bigger');
     main.classList.toggle('bigger');
  })
@@ -226,8 +243,7 @@ slower.addEventListener('click', () => {
 const goth = document.getElementById('goth');
    
 goth.addEventListener('click', () => {
-    // removeClass('bigger');
-    removeClass('hat');
+    removeClass('fancy');
     removeClass('disco');
     toggleBubbles('goth');
     main.classList.toggle('goth');
@@ -240,8 +256,7 @@ const disco = document.getElementById('disco');
 
 disco.addEventListener('click', () => {
     removeClass('goth');
-    removeClass('hat');
-    // removeClass('bigger');
+    removeClass('fancy');
     toggleBubbles('disco');
     main.classList.toggle('disco');
 })
@@ -253,10 +268,9 @@ const fancy = document.getElementById('fancy');
 
 fancy.addEventListener('click', () => {
     removeClass('goth');
-    // removeClass('bigger');
     removeClass('disco');
-    toggleBubbles('hat');
-    main.classList.toggle('hat');
+    toggleBubbles('fancy');
+    main.classList.toggle('fancy');
 })
 //------------------------------------------------------------------------------------------------
 

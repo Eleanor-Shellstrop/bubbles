@@ -1,4 +1,6 @@
-/** PAGE STYLES */
+/*  -----------------------------
+  *          PAGE STYLES
+    -----------------------------   */  
 
 * {
     font-family: 'Shrikhand', cursive;
@@ -54,9 +56,6 @@
     padding: 5px 10px;
 }
 
-.button:active {
-    border: 2px solid transparent;
-}
 
 #fancy {
     font-family: 'Monsieur La Doulaise', cursive;
@@ -77,6 +76,7 @@
     *        BUBBLE STYLES
     -----------------------------   */  
 
+/*      Standard Bubble     */    
 .bubble {
     width: 100px;
     height: 100px;
@@ -103,25 +103,10 @@
     }
 }
 
-footer {
-    background-color: orchid;
-    padding: 10px;
-}
+/**     LISTENERS    */
 
-ul, li {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
-    color: white;
-    list-style-type: none;
-}
-
-/** LISTENERS */
-
-.bubble.bigger {transform: translateY(-100%) scale(2) !important;}
-
-.bubble.hat {
-    background: center / contain url("./images/fancy.png") !important;
-    box-shadow: inset 0px 0px 10px white, 0px 0px 30px goldenrod;
+.bubble.bigger {
+    transform: translateY(-100%) scale(2) !important;
 }
 
 .bubble.goth {
@@ -138,10 +123,37 @@ ul, li {
 .bubble.disco {
     background: center / cover url("./images/disco.png") !important;
 }
-.main.disco { background: center / cover url("./images/floor.jpg");}
+
+.main.disco { 
+    background: center / cover url("./images/floor.jpg");
+}
+
+.bubble.fancy {
+    background: center / contain url("./images/fancy.png") !important;
+    box-shadow: inset 0px 0px 10px white, 0px 0px 30px goldenrod;
+}
+
 
 /*  -----------------------------
-    *        LARGER SCREENS
+    *        FOOTER STYLES
+    -----------------------------   */  
+
+footer {
+    background-color: orchid;
+    padding: 10px;
+}
+
+ul, li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: white;
+    list-style-type: none;
+}
+
+
+
+/*  -----------------------------
+    * LARGER SCREEN MEDIA QUERIES
     -----------------------------   */  
 
 @media (min-width: 750px) {
@@ -201,7 +213,9 @@ ul, li {
     }
 }
 
-/* Very small screens */
+/*  -----------------------------
+    * VERY SMALL SCREEN MEDIA QUERY
+    -----------------------------   */  
 
 @media (max-width: 359px) {
     .main {
