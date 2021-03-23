@@ -9,9 +9,10 @@ https://eleanor-shellstrop.github.io/bubbles/
 This project is to demostrate what I've learned about Object-Oriented JavaScript and DOM maniupulation for Code Louisville's Front-End Web Development Course, Spring 2021. 
 
 **Concept**
+
 I wanted to learn how to use OOP in a way I could tangibly visualize. I also wanted to work with animations in CSS. The bubbles became a perfect tool for both. 
 
-what started as a basic page with only "more bubbles" and "reset bubbles" buttons grew as I learned to target other elements on the page. 
+What started as a basic page with only "more bubbles" and "reset bubbles" buttons grew as I learned to target other elements on the page. 
 
 Now, event listeners include:
 
@@ -26,17 +27,18 @@ The style buttons- goth, disco and fancy- can be applied at the same time as the
 
 ### Mobile first design
 
-![iPhone screen example](examples/iPhoneX.png "Render size: iPhone X")
+<img src="./examples/iPhoneX.png" alt="iPhone X screen" width="200" />
+
 This application was designed mobile screen sizes.
 
 The media queries feature breaks at minimum screen widths of 750px and 1290px for a better viewing experience on tablets or pcs. The buttons will change from columns on the original size to two rows of four at 750px and one row of eight at 1290px.
 
-![iPad screen example](examples/iPad.png "Render size: iPad")
-![PC screen example](examples/wide1200plus.png "Render size: PC monitor over 1290px")
+<img src="./examples/iPad.png" alt="iPad screen" width="300" />
+<img src="./examples/wide1200plus.png" alt="PC monitor screen" width="700" />
 
 While most phones today are over 360px wide, I have included a query for under 359px. Buttons will be displayed in a single column with smaller button size. Fonts, margins and padding all ajusted. 
 
-! [iPhone 5 screen example](examples/iPhone5.png "Render size: iPhone 5")
+<img src="./examples/iPhone5.png" alt="iPhone 5 screen" width="200" />
 
 ### Features
 
