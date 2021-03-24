@@ -286,6 +286,7 @@ resetButton.addEventListener('click', () => {
        main.removeChild(pop);
        main.className = 'main';
    }
+   const resetBubbles = new Extrabubble;
 })
 //------------------------------------------------------------------------------------------------
 
