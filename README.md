@@ -25,13 +25,15 @@ Now, event listeners include:
 
 The style buttons- goth, disco and fancy- can be applied at the same time as the "bigger" feature. All types can change speed at any time. 
 
+**Note:** Buttons cannot be clicked if a bubbled is traveling over it. If you generate dozens of bubbles, you may need to refresh the page to reset the screen if you wish to continue playing with the app. 
+
 ### Mobile first design
 
 <img src="./examples/iPhoneX.png" alt="iPhone X screen" width="200" />
 
 This application was designed for mobile screen sizes.
 
-The media queries feature breaks at minimum screen widths of 750px and 1290px for a better viewing experience on tablets or pcs. The buttons will change from columns on the original size to two rows of four at 750px and one row of eight at 1290px.
+The media queries feature breaks at minimum screen widths of 750px and 1290px for a better viewing experience on tablets or PCs. The buttons will change from columns on the original size to two rows of four at 750px. They also adjust to one row of eight at 1290px.
 
 <img src="./examples/iPad.png" alt="iPad screen" width="300" />
 <img src="./examples/wide1200plus.png" alt="PC monitor screen" width="700" />
