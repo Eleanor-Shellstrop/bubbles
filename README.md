@@ -25,7 +25,7 @@ Now, event listeners include:
 
 The style buttons- goth, disco and fancy- can be applied at the same time as the "bigger" feature. All types can change speed at any time. 
 
-**Note:** Buttons cannot be clicked if a bubbled is traveling over it. If you generate dozens of bubbles, you may need to refresh the page to reset the screen if you wish to continue playing with the app. 
+**Note:** Buttons cannot be clicked if a bubble is traveling over it. If you generate dozens of bubbles, you may need to refresh the page to reset the screen if you wish to continue playing with the app. 
 
 ### Mobile first design
 
