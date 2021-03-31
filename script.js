@@ -43,7 +43,8 @@ class Multibubble {
         for (let i = 0; i < bubbleDivs.length; i++) {
             let moveX = Math.floor(Math.random() * 100);
             let wait = Math.floor(Math.random() * 5);
-            let speed = Math.floor(Math.random() * (6 - 3 + 1)) + 1;
+            let rateArray = [2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6];
+            let speed = rateArray[Math.floor(Math.random() * rateArray.length)];
             let scales = [0.25, 0.5, 0.75, 1.0, 1.25, 1.5];
             let randomScale = scales[Math.floor(Math.random() * scales.length)];
             let sizes = [25, 50, 75, 100, 125];
