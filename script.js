@@ -11,18 +11,16 @@
  *  @param  x       Where bubble appears across x-axis of width
  *  @param  delay   Stagger entrance so new bubbles appear at different times
  *  @param  rate    Rate of speed bubble moves to top
- *  @param  color   One of four color options
  *  @param  scale   Transform size of the bubbles toward the top of screen
  *  @param  size    Vary the size of the bubbles  
  *   ----------------------------------------------------------------------------    */
 
 
 class Bubble {
-    constructor (x, delay, rate, color, scale, size) {
+    constructor (x, delay, rate, scale, size) {
         this.x = x;
         this.delay = delay;
         this.rate = rate;
-        this.color = color;
         this.scale = scale;
         this.size = size;
     }
@@ -45,10 +43,7 @@ class Multibubble {
         for (let i = 0; i < bubbleDivs.length; i++) {
             let moveX = Math.floor(Math.random() * 100);
             let wait = Math.floor(Math.random() * 5);
-            let speed = Math.floor(Math.random() * (6 - 1.5 + 1)) + 1;
-            // Colors in order w/ 57% transparency: peachpuff, lemonchiffon, lightblue, lavender
-            let colors = ['#ffd9b893', '#fffacd93', '#add8e693', '#e6e6fa93'];
-            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            let speed = Math.floor(Math.random() * (6 - 3 + 1)) + 1;
             let scales = [0.25, 0.5, 0.75, 1.0, 1.25, 1.5];
             let randomScale = scales[Math.floor(Math.random() * scales.length)];
             let sizes = [25, 50, 75, 100, 125];
@@ -58,12 +53,11 @@ class Multibubble {
             Bubble.x = moveX;
             Bubble.delay = wait;
             Bubble.rate = speed;
-            Bubble.color = randomColor;
             Bubble.scale = randomScale;
             Bubble.size = randomSize;
 
             //  Push to bubbles array
-            this.bubbles.push(new Bubble(moveX, wait, speed, randomColor, randomScale, randomSize)); 
+            this.bubbles.push(new Bubble(moveX, wait, speed, randomScale, randomSize)); 
         }
            
     }
@@ -82,9 +76,6 @@ class Multibubble {
 
             let stagger = this.bubbles[i].delay;
             div.style.animationDelay = stagger + "s";
-
-            let hue = this.bubbles[i].color;
-            div.style.background = "radial-gradient(at 25% 25%,  #ffffffa4 0%, " + hue + " 30%, #ffffff62 80%, #add8e6ad 100%)";
 
             let scaleUpDown = this.bubbles[i].scale;
             div.style.transform = "translateY(-100%) scale("+ scaleUpDown + ")";

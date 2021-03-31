@@ -55,15 +55,14 @@ While most phones today are over 360px wide, I have included a query for under 3
 * Multibubble.makeBubble() will randomly assign attributes to make varying bubbles:
   * Starting at a random point on the x-axis to generate.
   * Delay entrance to stagger bubbles.
-  * Varying speed to top of screen between 1.5 - 6 seconds.
-  * One of four colors.
+  * Varying speed to top of screen between 2 - 6 seconds.
   * One of six scale percentages so the bubble will increase or decrease as it moves to the top.
   * Starting point of one of five random diameters;
   * New bubbles will enter with whatever style is applied to the existing bubbles. 
     * For example, if you have disco bubbles on the screen and click "more bubbles," then the new bubbles will also be disco bubbles. 
 * "Slower" and "faster" buttons iterate through every bubble and add and subtract (respectively) half a second. It must iterate because each bubble has a different speed to start. 
 
-For best viewing, please turn off dark mode. 
+**For best viewing, please turn off dark mode. **
 
 Image credits:
 * Hat & monocle image: https://webstockreview.net/

@@ -48,7 +48,7 @@
                     inset 0px 0px 10px darkorchid, 
                     inset 5px 5px 5px white, 
                     inset -5px -5px 5px lightpink;
-    color: lavenderblush;
+    color: white;
     text-shadow: 1px 2px 3px darkorchid, -2px -2px 1px darkorchid;
     font-size: 1.2em;
     margin-top: 10px;
@@ -84,7 +84,10 @@
     border-radius: 50%;
     position: absolute;
     align-self: self-end;
-    background: radial-gradient(at 25% 25%, #ffffffa4 0%, #00ffff91 30%, #ffffff62 80%, #add8e6ad 100%);    
+    background: radial-gradient(at 25% 25%, rgba(255, 255, 255, 0.643) 0%, 
+                                            rgba(230, 230, 250, 0.576) 30%, 
+                                            rgba(255, 255, 255, 0.384) 80%, 
+                                            rgba(173, 216, 230, 0.68) 100%);     
     animation: upward 6s ease-in infinite running;
     transform: translateY(-100%);
     overflow: hidden;
