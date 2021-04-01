@@ -6,7 +6,7 @@ https://eleanor-shellstrop.github.io/bubbles/
 
 
 ### About
-This project is to demostrate what I've learned about Object-Oriented JavaScript and DOM maniupulation for Code Louisville's Front-End Web Development Course, Spring 2021. 
+This project is to demonstrate what I've learned about Object-Oriented JavaScript and DOM manipulation for Code Louisville's Front-End Web Development Course, Spring 2021. 
 
 **Concept**
 
@@ -38,7 +38,7 @@ The media queries feature breaks at minimum screen widths of 750px and 1290px fo
 <img src="./examples/iPad.png" alt="iPad screen" width="300" />
 <img src="./examples/wide1200plus.png" alt="PC monitor screen" width="700" />
 
-While most phones today are over 360px wide, I have included a query for under 359px. Buttons will be displayed in a single column with smaller button size. Fonts, margins and padding all ajusted. 
+While most phones today are over 360px wide, I have included a query for under 359px. Buttons will be displayed in a single column with smaller button size. Fonts, margins and padding all adjusted. 
 
 <img src="./examples/iPhone5.png" alt="iPhone 5 screen" width="200" />
 
