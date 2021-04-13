@@ -56,6 +56,16 @@
     padding: 5px 10px;
 }
 
+.button:active {
+    box-shadow: inset 0px 0px 10px orchid, 
+                inset 5px 5px 5px white, 
+                inset -5px -5px 5px lightpink;
+    transform: translateY(7px);
+}
+
+.button:focus {
+    outline: lightgrey auto 1px;
+}
 
 #fancy {
     font-family: 'Monsieur La Doulaise', cursive;
